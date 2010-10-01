@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>jQuery.htmlbuilder (simple)</title>
+	<!-- Date: 2010-10-01 -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.htmlbuilder.js"></script>
+	<script type="text/javascript" src="htmlbuilder.js"></script>
+	<script type="text/javascript">
+	<!--
+	$(function(){
+
+		/*-- jQuery HTMLbuilder plugin. ("$.fn.buildin")
+		---- 1 or 2 parameters accepted:
+		---- * 1:  $(selector).buildin([<HTMLbuilder array>])
+		----       e.g. $('p').buildin(['a',{href:'#cool'},'This is so easy!'])
+		----
+		---- * 2:  $(selector).buildin("<jquery insertion fn>", [<HTMLbuilder array>])
+		----       e.g. $('p').buildin('prepend', ['a',{href:'#cool'},'This is so easy!'])
+		--*/
+
+		$('body').buildin('append', [
+			'fieldset',
+			{id:'dog'},
+			""
+		]);
+		
+		$('#dog').buildin([
+			'legend',
+			{},
+			"Fieldset with an ID of dog"
+			]);
+		
+		$('#dog').buildin([
+			'a',
+			{href:'http://github.com/indieinvader/htmlbuilder'},
+			"The original HTMLbuilder can be found here."
+			]);
+	});
+	-->
+	</script>
+</head>
+<body>
+
+</body>
+</html>

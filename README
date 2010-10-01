@@ -1,0 +1,20 @@
+From: http://github.com/indieinvader/htmlbuilder/
+/**
+ * HTMLBuilder
+ *
+ * A micro-library designed to make creating/mainipulating DOM Elements
+ * fast and easy
+ *
+ * Copyright 2010, Carlos Killpack
+ * Dual licensed under New BSD and WTFPL licenses
+ */
+
+
+jQuery HTMLbuilder plugin. ("$.fn.buildin")
+
+1 or 2 parameters accepted:
+ * 1:  $(selector).buildin([<HTMLbuilder array>])
+       e.g. $('p').buildin(['a',{href:'#cool'},'This is so easy!'])
+
+ * 2:  $(selector).buildin("<jquery insertion fn>", [<HTMLbuilder array>])
+       e.g. $('p').buildin('prepend', ['a',{href:'#cool'},'This is so easy!'])
