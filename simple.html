@@ -6,9 +6,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>jQuery.htmlbuilder (simple)</title>
 	<!-- Date: 2010-10-01 -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-	<script type="text/javascript" src="jquery.htmlbuilder.js"></script>
+	<script type="text/javascript" src="jquery-1.4.2.js"></script>
 	<script type="text/javascript" src="htmlbuilder.js"></script>
+	<script type="text/javascript" src="jquery.htmlbuilder.js"></script>
 	<script type="text/javascript">
 	<!--
 	$(function(){
@@ -22,28 +22,16 @@
 		----       e.g. $('p').buildin('prepend', ['a',{href:'#cool'},'This is so easy!'])
 		--*/
 
-		$('body').buildin('append', [
-			'fieldset',
-			{id:'dog'},
-			""
+		$('body a').buildIn('before', [
+			'p',
+			{style:'font-size:larger'},
+			["This version uses the ", ['em', {}, 'temporary'], " ", ["code", {}, "buildR"], " function to allow more complex ", ["acronym", {title:'Document Object Model'}, "DOM"], " structures in the generated HTML."]
 		]);
-		
-		$('#dog').buildin([
-			'legend',
-			{},
-			"Fieldset with an ID of dog"
-			]);
-		
-		$('#dog').buildin([
-			'a',
-			{href:'http://github.com/indieinvader/htmlbuilder'},
-			"The original HTMLbuilder can be found here."
-			]);
 	});
 	-->
 	</script>
 </head>
 <body>
-
+	<a href="http://github.com/indieinvader/htmlbuilder/">Thanks to indieinvader for the htmlbuilder project</a>.
 </body>
 </html>

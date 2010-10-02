@@ -44,7 +44,7 @@
                     }
                     return keys;
                 };
-        self.version = '0.2.1';
+        self.version = '0.2.2';
         /*
          * Creates an elements, sets its properties, and inserts
          * its contents. Takes the following array literal
@@ -72,6 +72,46 @@
                         });
             return callback ? callback(el) : el;
         };
+        /*
+         * BuildR (name tbd) stands for build recursive. It mimics the behavior of
+         *   "build" with one key difference--
+         * When an array is passed as the <content> of the element, it "buildR"s
+         * each item in the array.
+         * -- This allows you to create elements with siblings
+         * -- This requires that you use an extra set of [brackets] when
+         *    creating sub-elements
+         *
+         * [
+         *     <tagname>,
+         *     {key: 'val'},
+         *     <content> || [
+         *         [<tagname>,{key:'val'},<content>]*
+         *     ]
+         * ]
+         *
+         */
+        self.buildR = function (elDef, callback) {
+			if(typeof elDef === 'string') {
+				return callback ? callback(document.createTextNode(elDef)) : document.createTextNode(elDef);
+			}
+
+            var el = document.createElement(elDef[0]);
+            elDef[1] && forEach(keys(elDef[1]), function (key) {
+                el.setAttribute(key, elDef[1][key]);
+            });
+            elDef[2] &&
+                typeof elDef[2] === 'string' ?
+                    self.insert(document.createTextNode(elDef[2]), el, null) :
+                    elDef[2] instanceof Array && (function(){
+							for(var i=0;i<elDef[2].length;i++) {
+								self.buildR(elDef[2][i], function(subEl){
+									self.insert(subEl, el, null);
+								})
+							}
+						})()
+            return callback ? callback(el) : el;
+        };
+
         /*
          * Creates multiple elements and puts them in a
          * DocumentFragment. A defList looks like this:
