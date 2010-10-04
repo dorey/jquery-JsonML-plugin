@@ -19,13 +19,11 @@
 <!--
 jQuery(function($){
 
-	var tableDefs = [
+	$('div').buildIn(builder.templates.table( 
 		["Header 1", "Header 2"],
 		["Row 1, Item 1", "Row 1, Item 2"],
 		["Row 2, Item 1", "Row 2, Item 2"]
-	]
-
-	$('div').buildIn(builder.templates.table.apply(window, tableDefs))
+		));
 })
 -->
 </script>
