@@ -1,10 +1,10 @@
 /*-- jQuery Plug-in: "buildIn"
 ----  (author:Alex Dorey <http://github.com/dorey>)
 ---- =========================
----- > Based on the JSON syntax of the htmlbuilder script from indieinvader
+---- > Based on the JSON syntax of indieinvader's htmlbuilder and JsonML.
 ---- > Allows jQuery enabled pages to describe html in an array syntax
 ---- > Defaults to using jQuery's "append" function, but can also use "prepend", "before", and "after"
----- > Also allows "replace", which is equivalent to $(selector).empty().append(...)
+---- > Also allows "replace", which is equivalent to $(selector).innerHTML="<element tree />"
 ----
 ---- Basic usage:
 ----   $(selector).buildIn(<tagName>, <tagAttributes>, <elementContents>)

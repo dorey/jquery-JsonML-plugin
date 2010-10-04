@@ -11,26 +11,20 @@
 <!-- (htmlbuilder.templates works with builder.js or with jquery && jquery.buildin.js.)
 	<script src="../htmlbuilder/builder.js" type="text/javascript"></script> -->
 
-	<script src="htmlbuilder.templates.js" type="text/javascript"></script>
+	<script src="jquery.buildin.templates.js" type="text/javascript"></script>
 </head>
 <body>
 	<div></div>
 <script type="text/javascript">
 <!--
 jQuery(function($){
-	
-/*--	var pageOpts = {
-		title: 'Entire HTML Page',
-		body: "<p>The <strong>entire</strong> HTML page <strike>can</strike> <em>cannot</em> be replaced.</p><em>&mdash;I'm not sure why you would want to do this.</em><div></div>"
-	} --*/
-	
-	tableDefs = [
+
+	var tableDefs = [
 		["Header 1", "Header 2"],
 		["Row 1, Item 1", "Row 1, Item 2"],
 		["Row 2, Item 1", "Row 2, Item 2"]
 	]
 
-//	$('html').buildIn('replace', builder.templates.page(pageOpts)) **BROWSER FAILS :(
 	$('div').buildIn(builder.templates.table.apply(window, tableDefs))
 })
 -->

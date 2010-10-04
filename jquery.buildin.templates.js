@@ -1,5 +1,5 @@
-/* htmlbuilder templates
- * -- uses htmlbuilder's syntax to generate arrays that can 
+/* htmlbuilder/JsonML templates
+ * -- uses htmlbuilder and JsonML's syntax to generate arrays that can 
  *    be converted into commonly used HTML structures
  * -- Purpose:
  *    <table><tbody><tr><td>This is so much work!</td></tr></tbody></table>
@@ -15,7 +15,7 @@
  * Example:
  *       var table = builder.templates.table(['header1','header2'], ['item1', 'item2'])
  *
- * This will give you a htmlbuilderable array:
+ * This will give you a buildable array:
  *      ['table', {}, 
  *          ['tbody', {},
  *              ['tr', {},
@@ -63,19 +63,7 @@ builder.templates=(function(){
 		];
 	}
 	
-	function BasicHTMLPage(opts) {
-		return [
-			["head", {},
-				["title", {}, opts.title]
-			],
-			["body", {}, 
-				opts.body
-			]
-		]
-	}
-	
 	return {
-		table: TableTemplate,
-		page: BasicHTMLPage
+		table: TableTemplate
 	}
 })();

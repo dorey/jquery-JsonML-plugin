@@ -1,4 +1,4 @@
-jQuery HTMLbuilder plugin. ("$.fn.buildIn")
+jQuery HTMLbuilder/JsonML plugin. ("$.fn.buildIn")
 
 Parameters accepted:
  * 1:  $(selector).buildIn(<HTMLbuilder syntax>)
