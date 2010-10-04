@@ -2,7 +2,7 @@ jQuery HTMLbuilder plugin. ("$.fn.buildIn")
 
 Parameters accepted:
  * 1:  $(selector).buildIn(<HTMLbuilder syntax>)
-       e.g. $('p').buildIn(['a',{href:'#cool'},'This is so easy!'])
+       e.g. $('p').buildIn('a',{href:'#cool'},'This is so easy!')
 
  * 2:  $(selector).buildIn("<jquery insertion fn>", <HTMLbuilder syntax>)
-       e.g. $('p').buildIn('prepend', ['a',{href:'#cool'},['This is <em>so</em> easy!]])
+       e.g. $('p').buildIn('after', 'a',{href:'#cool'},'This is so easy!')
