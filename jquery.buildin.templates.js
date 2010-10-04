@@ -3,7 +3,7 @@
  *    be converted into commonly used HTML structures
  * -- Purpose:
  *    <table><tbody><tr><td>This is so much work!</td></tr></tbody></table>
- * -- original examples include: table & page
+ * -- original examples include: table
  *
  * Usage:
  *   builder.templates.table(
@@ -34,7 +34,7 @@
  */
 ;if(typeof(window.builder)=='undefined'){window.builder={}}
 
-builder.templatesVersion = "0.0.2";
+builder.templatesVersion = "0.03";
 
 builder.templates=(function(){
 	function TableTemplate(options) {
